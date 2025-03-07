@@ -1,13 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+  
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'Nunito', sans-serif;
+  background-color: #f8f9fa; /* Light gray background for a cleaner look */
+  color: #333; /* Darker text for better readability */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.sidebar {
+  background: linear-gradient(135deg, #ffffff, #f8f9fa);
+  border-right: 1px solid #e2e8f0;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+}
+.post-card {
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.post-card:hover {
+  transform: scale(1.02);
+}
+.dark-mode-toggle {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #1e293b;
+  color: white;
+  border-radius: 50px;
+  padding: 10px 16px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+}
+
+.dark-mode-toggle:hover {
+  background: #374151;
+}
+.sidebar {
+  background: linear-gradient(135deg, #ffffff, #f8f9fa);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.dark .sidebar {
+  background: linear-gradient(135deg, #1e1e1e, #252525);
+}
+.post-card {
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.post-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+.dark-mode-toggle {
+  box-shadow: 0px 5px 15px rgba(255, 165, 0, 0.4);
+}
+.feed-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.feed-item img {
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.feed-item img:hover {
+  transform: scale(1.02);
+}
+.feed-item img {
+  transition: transform 0.3s ease-in-out;
+}
+.feed-item:hover img {
+  transform: scale(1.03);
+}
+.dark input,
+.dark textarea {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+.image-container {
+  width: 400px; /* Fixed width */
+  height: 500px; /* Fixed height */
+  overflow: hidden; /* Ensures the image fits well */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures it maintains cropping */
+}
+.transition-all {
+  transition-property: background-color, transform; 
 }
